@@ -20,29 +20,33 @@ public class SnakeAndLadder {
 		
 		System.out.println("Player 1 Start Position is = "+position);
 
-		int dieNo = random.nextInt(6)+1;
-		System.out.println("Die Number="+dieNo);
+		while(position != 100) {
 		
-		int option = random.nextInt(3)+1;
-		System.out.println("Option Number="+option);
-		switch(option) {
-		case NO_PLAY:
-				System.out.println("Option = NO PLAY");
-				position = position;
-			break;
-		case LADDER:
-				System.out.println("Option = LADDER");
-				position = position + dieNo;
-			break;
-		case SNAKE:
-				System.out.println("Option = SNAKE");
-				position = position - dieNo;
-				if(position < 0) {
-					position = 0;
-				}
-			break;
+			int dieNo = random.nextInt(6)+1;
+			System.out.println("Die Number="+dieNo);
+			
+			int option = random.nextInt(3)+1;
+			System.out.println("Option Number="+option);
+			switch(option) {
+			case NO_PLAY:
+					System.out.println("Option = NO PLAY");
+					position = position;
+				break;
+			case LADDER:
+					System.out.println("Option = LADDER");
+					position = position + dieNo;
+				break;
+			case SNAKE:
+					System.out.println("Option = SNAKE");
+					position = position - dieNo;
+					if(position < 0) {
+						position = 0;
+					}
+				break;
+			}
+			System.out.println("New Position = "+position);
+			System.out.println("##########################");
 		}
-		System.out.println("New Position = "+position);
 	}
 
 }
